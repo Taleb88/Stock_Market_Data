@@ -9,5 +9,11 @@ prices_split_adjusted_df = pd.read_excel('master.xlsx',
 securities_df = pd.read_excel('master.xlsx',
                               sheet_name="securities")
 
-print(fundamentals_df.head())
-print(fundamentals_df.tail())
+#print(fundamentals_df.head())
+#print(fundamentals_df.tail())
+
+fundamentals_condensed_df = pd.DataFrame()
+id = fundamentals_df.iloc[:,0]
+fundamentals_condensed_df['id'] = id.copy()
+
+fundamentals_condensed_df.to_excel('test.xlsx', index=False)

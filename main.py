@@ -16,4 +16,4 @@ fundamentals_condensed_df = pd.DataFrame()
 id = fundamentals_df.iloc[:,0]
 fundamentals_condensed_df['id'] = id.copy()
 
-fundamentals_condensed_df.to_excel('test.xlsx', index=False)
+fundamentals_condensed_df.to_excel('fundamentals_condensed_df.xlsx', index=False)

@@ -10,3 +10,4 @@ securities_df = pd.read_excel('master.xlsx',
                               sheet_name="securities")
 
 print(fundamentals_df.head())
+print(fundamentals_df.tail())

@@ -12,6 +12,7 @@ securities_df = pd.read_excel('master.xlsx',
 #print(fundamentals_df.head())
 #print(fundamentals_df.tail())
 
+# creating fundamentals condensed dataframe
 fundamentals_condensed_df = pd.DataFrame()
 id = fundamentals_df.iloc[:,0]
 fundamentals_condensed_df['ID'] = id.copy()
@@ -24,5 +25,5 @@ fundamentals_condensed_df['Accounts Payable'] = accounts_payable.copy()
 accounts_receivable = fundamentals_df.iloc[:,4]
 fundamentals_condensed_df['Accounts Receivable'] = accounts_receivable.copy()
 
-
+# created new workbook containing fundamentals condensed dataframe
 fundamentals_condensed_df.to_excel('fundamentals_condensed_df.xlsx', index=False)

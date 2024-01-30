@@ -27,7 +27,7 @@ fundamentals_condensed_df['Accounts Receivable'] = accounts_receivable.copy()
 
 # remove timestamp from period ending values
 fundamentals_condensed_df['Period Ending'] = \
-    fundamentals_condensed_df['Period Ending'].astype(str).str[:11] #convert to string format before slicing value
+    fundamentals_condensed_df['Period Ending'].astype(str).str[:11] #convert to string format and remove timestamp
 
 # created new workbook containing fundamentals condensed dataframe
 fundamentals_condensed_df.to_excel('fundamentals_condensed_df.xlsx', index=False)

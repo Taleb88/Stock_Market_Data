@@ -40,7 +40,7 @@ long_term_investments = fundamentals_df.iloc[:,33]
 fundamentals_condensed_df['Long-Term Investments'] = long_term_investments.copy()
 minority_interest = fundamentals_df.iloc[:,34]
 fundamentals_condensed_df['Minority Interest'] = minority_interest.copy()
-for_year = fundamentals_df.iloc[:,76]
+for_year = fundamentals_df.iloc[:,2] # period ending and will slice the month and day as we only want the year value
 fundamentals_condensed_df['For Year'] = for_year.copy()
 earnings_per_share = fundamentals_df.iloc[:,77]
 fundamentals_condensed_df['Earnings Per Share'] = earnings_per_share.copy()
@@ -51,6 +51,10 @@ fundamentals_condensed_df['Estimated Shares Outstanding'] = estimated_shares_out
 # remove timestamp from period ending values
 fundamentals_condensed_df['Period Ending'] = \
     fundamentals_condensed_df['Period Ending'].astype(str).str[:11] #convert to string format and remove timestamp
+
+#remove month and year from for year values
+fundamentals_condensed_df['For Year'] = \
+    fundamentals_condensed_df['Period Ending'].astype(str).str[:4] #convert to string and grab the year value only
 
 # created new workbook containing fundamentals condensed dataframe
 fundamentals_condensed_df.to_excel('fundamentals_condensed_df.xlsx', index=False)

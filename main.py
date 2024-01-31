@@ -61,10 +61,10 @@ fundamentals_condensed_df.to_excel('fundamentals_condensed_df.xlsx', index=False
 
 # creating earnings dataframe from fundamentals condensed dataframe
 earnings_df = pd.DataFrame()
-id = fundamentals_condensed_df.loc['ID']
+id = fundamentals_condensed_df.iloc[:,0]
 earnings_df['ID'] = id.copy()
-ticker_symbol = fundamentals_condensed_df.loc['Ticket Symbol']
+ticker_symbol = fundamentals_condensed_df.iloc[:,1]
 earnings_df['Ticker Symbol'] = ticker_symbol.copy()
 
-# created new workbook containing earnings dataframe from fundamentals condensed dataframe
+# created new workbook containing fundamentals condensed dataframe
 earnings_df.to_excel('earnings_df.xlsx', index=False)

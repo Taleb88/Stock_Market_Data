@@ -24,6 +24,8 @@ accounts_payable = fundamentals_df.iloc[:,3]
 fundamentals_condensed_df['Accounts Payable'] = accounts_payable.copy()
 accounts_receivable = fundamentals_df.iloc[:,4]
 fundamentals_condensed_df['Accounts Receivable'] = accounts_receivable.copy()
+gross_profit = fundamentals_df[:,25]
+fundamentals_condensed_df['Gross Profit'] = gross_profit.copy()
 
 # remove timestamp from period ending values
 fundamentals_condensed_df['Period Ending'] = \

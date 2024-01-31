@@ -51,14 +51,21 @@ fundamentals_condensed_df['Estimated Shares Outstanding'] = estimated_shares_out
 correct_year = []
 
 for x in fundamentals_condensed_df['Period Ending']:
-    if '2012' in fundamentals_condensed_df['Period Ending']:
-        correct_year.append(x)
-    elif '2013' in fundamentals_condensed_df['Period Ending']:
-        correct_year.append(x)
-    elif '2014' in fundamentals_condensed_df['Period Ending']:
-        correct_year.append(x)
-    elif '2015' in fundamentals_condensed_df['Period Ending']:
-        correct_year.append(x)
+    try:
+        if '2012' in fundamentals_condensed_df['Period Ending']:
+            correct_year.append(x)
+        elif '2013' in fundamentals_condensed_df['Period Ending']:
+            correct_year.append(x)
+        elif '2014' in fundamentals_condensed_df['Period Ending']:
+            correct_year.append(x)
+        elif '2015' in fundamentals_condensed_df['Period Ending']:
+            correct_year.append(x)
+        elif '2016' in fundamentals_condensed_df['Period Ending']:
+            correct_year.append(x)
+        else:
+            pass
+    except:
+        print("Error. Cannot populate For Year column.")
 
 fundamentals_condensed_df['For Year'] = correct_year
 

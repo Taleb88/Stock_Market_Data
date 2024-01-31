@@ -26,6 +26,27 @@ accounts_receivable = fundamentals_df.iloc[:,4]
 fundamentals_condensed_df['Accounts Receivable'] = accounts_receivable.copy()
 gross_profit = fundamentals_df[:,25]
 fundamentals_condensed_df['Gross Profit'] = gross_profit.copy()
+intangible_assets = fundamentals_df[:,27]
+fundamentals_condensed_df['Intangible Assets'] = intangible_assets.copy()
+interest_expense = fundamentals_df[:,28]
+fundamentals_condensed_df['Interest Expense'] = interest_expense.copy()
+investments = fundamentals_df[:,30]
+fundamentals_condensed_df['Investments'] = investments.copy()
+liabilities = fundamentals_df[:,31]
+fundamentals_condensed_df['Liabilities'] = liabilities.copy()
+long_term_debt = fundamentals_df[:,32]
+fundamentals_condensed_df['Long-Term Debt'] = long_term_debt.copy()
+long_term_investments = fundamentals_df[:,33]
+fundamentals_condensed_df['Long-Term Investments'] = long_term_investments.copy()
+minority_interest = fundamentals_df[:,34]
+fundamentals_condensed_df['Minority Interest'] = minority_interest.copy()
+for_year = fundamentals_df[:,75]
+fundamentals_condensed_df['For Year'] = for_year.copy()
+earnings_per_share = fundamentals_df[:,76]
+fundamentals_condensed_df['Earnings Per Share'] = earnings_per_share.copy()
+estimated_shares_outstanding = fundamentals_df[:,77]
+fundamentals_condensed_df['Estimated Shares Outstanding'] = estimated_shares_outstanding.copy()
+
 
 # remove timestamp from period ending values
 fundamentals_condensed_df['Period Ending'] = \

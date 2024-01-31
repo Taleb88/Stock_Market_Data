@@ -40,43 +40,13 @@ long_term_investments = fundamentals_df.iloc[:,33]
 fundamentals_condensed_df['Long-Term Investments'] = long_term_investments.copy()
 minority_interest = fundamentals_df.iloc[:,34]
 fundamentals_condensed_df['Minority Interest'] = minority_interest.copy()
-for_year = fundamentals_df.iloc[:,75]
+for_year = fundamentals_df.iloc[:,76]
 fundamentals_condensed_df['For Year'] = for_year.copy()
-earnings_per_share = fundamentals_df.iloc[:,76]
+earnings_per_share = fundamentals_df.iloc[:,77]
 fundamentals_condensed_df['Earnings Per Share'] = earnings_per_share.copy()
-estimated_shares_outstanding = fundamentals_df.iloc[:,77]
+estimated_shares_outstanding = fundamentals_df.iloc[:,78]
 fundamentals_condensed_df['Estimated Shares Outstanding'] = estimated_shares_outstanding.copy()
 
-
-correct_year = []
-
-for x in fundamentals_condensed_df['Period Ending']:
-    try:
-        if '2012' in fundamentals_condensed_df['Period Ending']:
-            correct_year.append(x)
-        elif '2013' in fundamentals_condensed_df['Period Ending']:
-            correct_year.append(x)
-        elif '2014' in fundamentals_condensed_df['Period Ending']:
-            correct_year.append(x)
-        elif '2015' in fundamentals_condensed_df['Period Ending']:
-            correct_year.append(x)
-        elif '2016' in fundamentals_condensed_df['Period Ending']:
-            correct_year.append(x)
-        else:
-            pass
-    except:
-        print("Error. Cannot populate For Year column.")
-
-fundamentals_condensed_df['For Year'] = correct_year
-
-'''
-# if '2012', '2013', '2014', '2015', '2016' in Period Ending
-def earnings_per_share_blank_value(df):
-    blank = []
-    for x in df['Period Ending']:
-        if '2014' in df['Period Ending']:
-            blank.append(x)
-'''
 
 # remove timestamp from period ending values
 fundamentals_condensed_df['Period Ending'] = \

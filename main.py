@@ -170,7 +170,7 @@ earnings_per_share_pivot_table.\
 
 #using matplotlib to develop AAPL yearly earnings per share chart
 import matplotlib.pyplot as plt
-file = pd.read_excel('.xlsx')
+file = pd.read_excel('aapl_stock_yearly_earnings_per_share_df.xlsx')
 
 x_axis = file['For Year']
 y_axis = file['Earnings Per Share']

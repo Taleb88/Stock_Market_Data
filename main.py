@@ -154,6 +154,16 @@ earnings_per_share_pivot_table.\
     to_excel('earnings_per_share_pivot_table.xlsx')
 
 
+# *CHARTS*
+
+#appl (apple stock) 2013 earnings per share chart
+appl_2013_earnings_per_share_chart = \
+    earnings_per_share_pivot_table.plot.line(x='2013', y='AAPL')
+
+appl_2013_earnings_per_share_chart.\
+    to_excel('appl_2013_earnings_per_share_chart.xlsx')
+
+
 # *AUTOMATICALLY ADJUSTING WIDTH FOR ALL COLUMNS*
 
 #using xlwings to auto adjust column width
@@ -179,4 +189,4 @@ file_path = 'earnings_df.xlsx'
 auto_fit_excel_columns_and_rows(file_path)
 
 file_path = 'earnings_per_share_pivot_table.xlsx'
-auto_fit_excel_columns_and_rows(file_path)
+auto_fit_excel_columns_and_rows(file_path)\

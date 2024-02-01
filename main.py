@@ -153,4 +153,24 @@ earnings_per_share_pivot_table = \
 earnings_per_share_pivot_table.\
     to_excel('earnings_per_share_pivot_table.xlsx')
 
+
 # *AUTOMATICALLY ADJUSTING WIDTH FOR ALL COLUMNS*
+
+#using xlwings to auto adjust column width
+import xlwings as xw
+
+def auto_fit_excel_columns_and_rows(file_path):
+    # open the workbook
+    app = xw.App(visible=False)
+    wb = app.books.open(file_path)
+    sheet = wb.sheets['Sheet1']  # Adjust as per your sheet name
+
+    # auto-fit column widths and row heights
+    sheet.autofit(axis='columns')
+    sheet.autofit(axis='rows')
+
+    wb.save()
+    app.quit() # close workbook
+
+file_path = 'earnings_per_share_pivot_table.xlsx'
+auto_fit_excel_columns_and_rows(file_path)

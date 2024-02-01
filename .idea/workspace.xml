@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59ed4c5e-5ee8-4e58-a702-0b0a502d3af4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/earnings_df.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/earnings_df.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/earnings_per_share_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/earnings_per_share_pivot_table.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fundamentals_condensed_df.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fundamentals_condensed_df.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

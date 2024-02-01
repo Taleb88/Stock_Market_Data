@@ -172,5 +172,11 @@ def auto_fit_excel_columns_and_rows(file_path):
     wb.save()
     app.quit() # close workbook
 
+file_path = 'fundamentals_condensed_df.xlsx'
+auto_fit_excel_columns_and_rows(file_path)
+
+file_path = 'earnings_df.xlsx'
+auto_fit_excel_columns_and_rows(file_path)
+
 file_path = 'earnings_per_share_pivot_table.xlsx'
 auto_fit_excel_columns_and_rows(file_path)

@@ -129,20 +129,20 @@ earnings_per_share_pivot_table = pd.pivot_table(
 earnings_per_share_pivot_table.to_excel('earnings_per_share_pivot_table.xlsx')
 
 # CONDITIONAL FORMATTING
-import xlwings as xw
+from openpyxl import formatting, styles, Workbook
 
 #earnings per share pivot table, cells highlighted with certain colors
-path = r"earnings_per_share_pivot_table.xlsx"
-
-with xw.App(visible=False) as app:
-    wb = xw.Book(path)
-    ws = wb.sheets[0]
-
-    for a_cell in ws["A1:K449"].expand("down"):
-        if type(a_cell.value) in [float, int]:
-            if a_cell.value > 0:
-                a_cell.color = (169, 208, 142) # green
-            elif a_cell.value == 0:
-                a_cell.color = (59, 127, 205) # blue
-            elif a_cell.value < 0:
-                a_cell.color = (192, 0, 0) # red
+wb = Workbook()
+ws = wb.active
+red_color = 'ffc7ce'
+red_fill = styles.PatternFill(start_color=red_color, end_color=red_color, fill_type='solid')
+for row in range(1,10):
+    ws.cell(row=row, column=1, value=row-5)
+    ws.cell(row=row, column=2, value=row-5)
+ws.conditional_formatting.add('A1:A10',
+                              formatting.rule.CellIsRule(operator='lessThan', formula=['0'], fill=red_fill)
+                              )
+ws.conditional_formatting.add('B1:B10',
+                              formatting.rule.CellIsRule(operator='lessThan', formula=['0'], fill=red_fill)
+                              )
+wb.save("earnings_per_share_pivot_table.xlsx")

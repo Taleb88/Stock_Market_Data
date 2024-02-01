@@ -165,7 +165,7 @@ earnings_per_share_pivot_table = \
 earnings_per_share_pivot_table.\
     to_excel('earnings_per_share_pivot_table.xlsx')
 
-'''
+
 # *CHARTS*
 
 #using matplotlib to develop AAPL yearly earnings per share chart
@@ -179,7 +179,7 @@ plt.bar(x_axis, y_axis, width=5)
 plt.xlabel("Year")
 plt.ylabel("Earnings Per Share")
 plt.show()
-'''
+
 
 # *AUTOMATICALLY ADJUSTING WIDTH FOR ALL COLUMNS*
 

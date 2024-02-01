@@ -115,6 +115,18 @@ earnings_df['Estimated Earnings Grade'] = estimated_earnings_status
 earnings_df.to_excel('earnings_df.xlsx', index=False)
 
 
+# *DATAFRAME PER SELECTED STOCK*
+
+#appl (apple) stock
+def appl(df):
+    return df[df['Ticker Symbol'] == 'AAPL']
+
+aapl_stock_yearly_earnings_per_share_df = appl(earnings_df)
+
+aapl_stock_yearly_earnings_per_share_df.\
+    to_excel('aapl_stock_yearly_earnings_per_share_df.xlsx')
+
+
 # PIVOT TABLES
 
 #earnings per share pivot table

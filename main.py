@@ -110,6 +110,19 @@ for value in earnings_df['Estimated Earnings']:
 
 earnings_df['Estimated Earnings Grade'] = estimated_earnings_status
 
-
 # created new workbook containing fundamentals condensed dataframe
 earnings_df.to_excel('earnings_df.xlsx', index=False)
+
+
+# PIVOT TABLES
+
+#earnings per share pivot table
+earnings_per_share_pivot_table = pd.pivot_table(
+    earnings_df,
+    index='Ticker Symbol',
+    columns='For Year',
+    values='Earnings Per Share',
+    aggfunc='sum'
+)
+
+earnings_per_share_pivot_table.to_excel('earnings_per_share_pivot_table.xlsx')

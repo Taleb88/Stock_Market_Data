@@ -126,21 +126,23 @@ earnings_per_share_pivot_table = pd.pivot_table(
     aggfunc='sum'
 )
 
-earnings_per_share_pivot_table.\
-    to_excel('earnings_per_share_pivot_table.xlsx')
+earnings_per_share_pivot_table.to_excel('earnings_per_share_pivot_table.xlsx')
 
-# *CONDITIONAL FORMATTING*
-# using openpyxl for conditional formatting
-from openpyxl import load_workbook
-from openpyxl.formatting.rule import ColorScaleRule
+# CONDITIONAL FORMATTING
+import xlwings as xw
 
 #earnings per share pivot table, cells highlighted with certain colors
+path = r"earnings_per_share_pivot_table.xlsx"
 
-wb = load_workbook(f'earnings_per_share_pivot_table.xlsx')
-ws = wb.active
+with xw.App(visible=False) as app:
+    wb = xw.Book(path)
+    ws = wb.sheets[0]
 
-color_rule = ColorScaleRule()
-
-ws.conditional_formatting.add('A1:K450', color_rule)
-
-wb.save('earnings_per_share_pivot_table.xlsx')
+    for a_cell in ws["A1:K449"].expand("down"):
+        if type(a_cell.value) in [float, int]:
+            if a_cell.value > 0:
+                a_cell.color = (169, 208, 142) # green
+            elif a_cell.value == 0:
+                a_cell.color = (59, 127, 205) # blue
+            elif a_cell.value < 0:
+                a_cell.color = (192, 0, 0) # red

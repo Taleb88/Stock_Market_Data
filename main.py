@@ -70,6 +70,22 @@ earnings_df['Earnings Per Share'] = earnings_per_share.copy()
 estimated_shares_outstanding = fundamentals_condensed_df.iloc[:,15]
 earnings_df['Estimated Earnings'] = estimated_shares_outstanding.copy()
 
+#creating new earnings per share plus minus column
+earnings_per_share_plus_minus = []
+
+for value in earnings_df['Earnings Per Share']:
+    try:
+        if value >= 0:
+            earnings_per_share_plus_minus.append('(+)')
+        elif value < 0:
+            earnings_per_share_plus_minus.append('(-)')
+        else:
+            earnings_per_share_plus_minus.append('N/A')
+    except:
+        print('Error. Cannot append plus/minus value(s).')
+
+earnings_df['Earnings Per Share +/-'] = earnings_per_share_plus_minus
+
 
 # created new workbook containing fundamentals condensed dataframe
 earnings_df.to_excel('earnings_df.xlsx', index=False)

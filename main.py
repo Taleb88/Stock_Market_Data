@@ -16,37 +16,53 @@ securities_df = pd.read_excel('master.xlsx',
 # creating fundamentals condensed dataframe
 fundamentals_condensed_df = pd.DataFrame()
 id = fundamentals_df.iloc[:,0]
-fundamentals_condensed_df['ID'] = id.copy()
+fundamentals_condensed_df['ID'] = \
+    id.copy()
 ticker_symbol = fundamentals_df.iloc[:,1]
-fundamentals_condensed_df['Ticker Symbol'] = ticker_symbol.copy()
+fundamentals_condensed_df['Ticker Symbol'] = \
+    ticker_symbol.copy()
 period_ending = fundamentals_df.iloc[:,2]
-fundamentals_condensed_df['Period Ending'] = period_ending.copy()
+fundamentals_condensed_df['Period Ending'] = \
+    period_ending.copy()
 accounts_payable = fundamentals_df.iloc[:,3]
-fundamentals_condensed_df['Accounts Payable'] = accounts_payable.copy()
+fundamentals_condensed_df['Accounts Payable'] = \
+    accounts_payable.copy()
 accounts_receivable = fundamentals_df.iloc[:,4]
-fundamentals_condensed_df['Accounts Receivable'] = accounts_receivable.copy()
+fundamentals_condensed_df['Accounts Receivable'] = \
+    accounts_receivable.copy()
 gross_profit = fundamentals_df.iloc[:,25]
-fundamentals_condensed_df['Gross Profit'] = gross_profit.copy()
+fundamentals_condensed_df['Gross Profit'] = \
+    gross_profit.copy()
 intangible_assets = fundamentals_df.iloc[:,27]
-fundamentals_condensed_df['Intangible Assets'] = intangible_assets.copy()
+fundamentals_condensed_df['Intangible Assets'] = \
+    intangible_assets.copy()
 interest_expense = fundamentals_df.iloc[:,28]
-fundamentals_condensed_df['Interest Expense'] = interest_expense.copy()
+fundamentals_condensed_df['Interest Expense'] = \
+    interest_expense.copy()
 investments = fundamentals_df.iloc[:,30]
-fundamentals_condensed_df['Investments'] = investments.copy()
+fundamentals_condensed_df['Investments'] = \
+    investments.copy()
 liabilities = fundamentals_df.iloc[:,31]
-fundamentals_condensed_df['Liabilities'] = liabilities.copy()
+fundamentals_condensed_df['Liabilities'] = \
+    liabilities.copy()
 long_term_debt = fundamentals_df.iloc[:,32]
-fundamentals_condensed_df['Long-Term Debt'] = long_term_debt.copy()
+fundamentals_condensed_df['Long-Term Debt'] = \
+    long_term_debt.copy()
 long_term_investments = fundamentals_df.iloc[:,33]
-fundamentals_condensed_df['Long-Term Investments'] = long_term_investments.copy()
+fundamentals_condensed_df['Long-Term Investments'] = \
+    long_term_investments.copy()
 minority_interest = fundamentals_df.iloc[:,34]
-fundamentals_condensed_df['Minority Interest'] = minority_interest.copy()
+fundamentals_condensed_df['Minority Interest'] = \
+    minority_interest.copy()
 for_year = fundamentals_df.iloc[:,2] # period ending and will slice the month and day as we only want the year value
-fundamentals_condensed_df['For Year'] = for_year.copy()
+fundamentals_condensed_df['For Year'] = \
+    for_year.copy()
 earnings_per_share = fundamentals_df.iloc[:,77]
-fundamentals_condensed_df['Earnings Per Share'] = earnings_per_share.copy()
+fundamentals_condensed_df['Earnings Per Share'] = \
+    earnings_per_share.copy()
 estimated_shares_outstanding = fundamentals_df.iloc[:,78]
-fundamentals_condensed_df['Estimated Shares Outstanding'] = estimated_shares_outstanding.copy()
+fundamentals_condensed_df['Estimated Shares Outstanding'] = \
+    estimated_shares_outstanding.copy()
 
 
 # remove timestamp from period ending values
@@ -59,6 +75,7 @@ fundamentals_condensed_df['For Year'] = \
 
 # created new workbook containing fundamentals condensed dataframe
 fundamentals_condensed_df.to_excel('fundamentals_condensed_df.xlsx', index=False)
+
 
 # creating earnings dataframe from fundamentals condensed dataframe
 earnings_df = pd.DataFrame()
@@ -115,7 +132,7 @@ earnings_df['Estimated Earnings Grade'] = estimated_earnings_status
 earnings_df.to_excel('earnings_df.xlsx', index=False)
 
 
-# *DATAFRAME PER SELECTED STOCK* IN PROGRESS
+# *DATAFRAME PER SELECTED STOCK*
 
 #appl (apple) stock
 def appl(df):
@@ -124,10 +141,10 @@ def appl(df):
 aapl_stock_yearly_earnings_per_share_df = appl(earnings_df)
 
 aapl_stock_yearly_earnings_per_share_df.\
-    to_excel('aapl_stock_yearly_earnings_per_share_df.xlsx')
+    to_excel('aapl_stock_yearly_earnings_per_share_df.xlsx', index=False)
 
 
-# PIVOT TABLES
+# *PIVOT TABLES*
 
 #earnings per share pivot table
 earnings_per_share_pivot_table = pd.pivot_table(
@@ -168,16 +185,12 @@ earnings_per_share_pivot_table.\
 
 # *CHARTS*
 
-#using matplotlib to develop AAPL yearly earnings per share chart
+#using matplotlib to develop AAPL yearly earnings per share pie chart
 import matplotlib.pyplot as plt
 file = pd.read_excel('aapl_stock_yearly_earnings_per_share_df.xlsx')
-
-x_axis = file['For Year']
-y_axis = file['Earnings Per Share']
-
-plt.bar(x_axis, y_axis, width=5)
-plt.xlabel("Year")
+plt.xlabel("For Year")
 plt.ylabel("Earnings Per Share")
+plt.pie(file['Earnings Per Share'],labels=file['For Year'])
 plt.show()
 
 

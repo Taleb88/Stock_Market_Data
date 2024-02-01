@@ -135,11 +135,11 @@ earnings_per_share_pivot_table.to_excel('earnings_per_share_pivot_table.xlsx')
 def highlight_earnings_per_share_pivot_table_values(dollar_amt):
     try:
         if dollar_amt > 0:
-            color = 'green'
+            color = '#65F595'
         elif dollar_amt == 0:
-            color = 'blue'
+            color = '#32ADF5'
         elif dollar_amt < 0:
-            color = 'red'
+            color = '#FA291A'
         else:
             color = None
         return f'background-color: {color}'

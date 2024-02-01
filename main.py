@@ -86,6 +86,28 @@ for value in earnings_df['Earnings Per Share']:
 
 earnings_df['Earnings Per Share +/-'] = earnings_per_share_plus_minus
 
+#creating new estimated earnings grade column
+estimated_earnings_status = []
+
+for value in earnings_df['Estimated Earnings']:
+    try:
+        if value >= 500000000:
+            estimated_earnings_status.append('Excellent')
+        elif value >= 25000000 and value <= 499999999.99:
+            estimated_earnings_status.append('Solid')
+        elif value >= 1 and value <= 249999999.99:
+            estimated_earnings_status.append('Positive')
+        elif value == 0:
+            estimated_earnings_status.append('Even')
+        elif value < 0:
+            estimated_earnings_status.append('Failing')
+        else:
+            estimated_earnings_status.append('N/A')
+    except:
+        print('Error. Cannot append estimated earnings status values.')
+
+earnings_df['Estimated Earnings Grade'] = estimated_earnings_status
+
 
 # created new workbook containing fundamentals condensed dataframe
 earnings_df.to_excel('earnings_df.xlsx', index=False)

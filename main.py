@@ -128,7 +128,27 @@ earnings_per_share_pivot_table = pd.pivot_table(
 
 earnings_per_share_pivot_table.to_excel('earnings_per_share_pivot_table.xlsx')
 
-# CONDITIONAL FORMATTING
-from openpyxl import load_workbook, formatting, styles
+# *CONDITIONAL FORMATTING*
+
 
 #earnings per share pivot table, cells highlighted with certain colors
+def highlight_earnings_per_share_pivot_table_values(dollar_amt):
+    try:
+        if dollar_amt > 0:
+            color = 'green'
+        elif dollar_amt == 0:
+            color = 'light blue'
+        elif dollar_amt < 0:
+            color = 'red'
+        else:
+            color = None
+        return f'background-color: {color}'
+    except:
+        print('Error. Unable to highlight cells.')
+
+earnings_per_share_pivot_table = \
+    earnings_per_share_pivot_table.style.\
+        apply(highlight_earnings_per_share_pivot_table_values)
+
+earnings_per_share_pivot_table.\
+    to_excel('earnings_per_share_pivot_table.xlsx')

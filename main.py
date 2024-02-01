@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 fundamentals_df = pd.read_excel('master.xlsx',
                                 sheet_name="fundamentals")
 prices_df = pd.read_excel('master.xlsx',
@@ -126,3 +127,17 @@ earnings_per_share_pivot_table = pd.pivot_table(
 )
 
 earnings_per_share_pivot_table.to_excel('earnings_per_share_pivot_table.xlsx')
+
+# CONDITIONAL FORMATTING
+
+#earnings per share pivot table
+def highlight_cells_earnings_per_share_pivot_table(value):
+    color = '#66FF66' if value >= 0 else ''
+    return 'background-color: {}'.format(color)
+
+earnings_per_share_pivot_table.\
+    style.\
+    applymap(highlight_cells_earnings_per_share_pivot_table)
+
+earnings_per_share_pivot_table.\
+    to_excel('earnings_per_share_pivot_table.xlsx')

@@ -154,19 +154,3 @@ earnings_per_share_pivot_table.\
     to_excel('earnings_per_share_pivot_table.xlsx')
 
 # *AUTOMATICALLY ADJUSTING WIDTH FOR ALL COLUMNS*
-
-#using excelwriter to auto adjust widths for all columns
-writer_earnings_per_share_pivot_table = \
-    pd.ExcelWriter('earnings_per_share_pivot_table.xlsx')
-
-# Auto-adjust columns' width
-for column in earnings_per_share_pivot_table:
-    column_width = \
-        max(earnings_per_share_pivot_table[column].
-            astype(str).map(len).max(), len(column))
-    col_idx = \
-        earnings_per_share_pivot_table.columns.get_loc(column)
-    writer_earnings_per_share_pivot_table.sheets['my_analysis'].\
-        set_column(col_idx, col_idx, column_width)
-
-writer_earnings_per_share_pivot_table.save()

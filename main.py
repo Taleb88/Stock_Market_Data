@@ -138,7 +138,7 @@ with xw.App(visible=False) as app:
     wb = xw.Book(path)
     ws = wb.sheets[0]
 
-    for a_cell in ws["A:Z"].expand("down"):
+    for a_cell in ws["A2:Z1000000"].expand("down"):
         if type(a_cell.value) in [float, int]:
             if a_cell.value > 0:
                 a_cell.color = (169, 208, 142) # green

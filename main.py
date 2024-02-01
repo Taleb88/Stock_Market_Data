@@ -126,10 +126,21 @@ earnings_per_share_pivot_table = pd.pivot_table(
     aggfunc='sum'
 )
 
-earnings_per_share_pivot_table.to_excel('earnings_per_share_pivot_table.xlsx')
+earnings_per_share_pivot_table.\
+    to_excel('earnings_per_share_pivot_table.xlsx')
 
 # *CONDITIONAL FORMATTING*
-
+# using openpyxl for conditional formatting
+from openpyxl import load_workbook
+from openpyxl.formatting.rule import ColorScaleRule
 
 #earnings per share pivot table, cells highlighted with certain colors
 
+wb = load_workbook(f'earnings_per_share_pivot_table.xlsx')
+ws = wb.active
+
+color_rule = ColorScaleRule()
+
+ws.conditional_formatting.add('A1:K450', color_rule)
+
+wb.save('earnings_per_share_pivot_table.xlsx')

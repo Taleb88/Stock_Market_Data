@@ -137,7 +137,7 @@ def highlight_earnings_per_share_pivot_table_values(dollar_amt):
         if dollar_amt > 0:
             color = 'green'
         elif dollar_amt == 0:
-            color = 'light blue'
+            color = 'blue'
         elif dollar_amt < 0:
             color = 'red'
         else:
@@ -148,7 +148,7 @@ def highlight_earnings_per_share_pivot_table_values(dollar_amt):
 
 earnings_per_share_pivot_table = \
     earnings_per_share_pivot_table.style.\
-        apply(highlight_earnings_per_share_pivot_table_values)
+        applymap(highlight_earnings_per_share_pivot_table_values)
 
 earnings_per_share_pivot_table.\
     to_excel('earnings_per_share_pivot_table.xlsx')

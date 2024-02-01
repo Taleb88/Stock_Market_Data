@@ -66,9 +66,9 @@ earnings_df['ID'] = id.copy()
 ticker_symbol = fundamentals_condensed_df.iloc[:,1]
 earnings_df['Ticker Symbol'] = ticker_symbol.copy()
 earnings_per_share = fundamentals_condensed_df.iloc[:,14]
-earnings_df['Earnings Per Share'] = ticker_symbol.copy()
+earnings_df['Earnings Per Share'] = earnings_per_share.copy()
 estimated_shares_outstanding = fundamentals_condensed_df.iloc[:,15]
-earnings_df['Estimated Earnings'] = ticker_symbol.copy()
+earnings_df['Estimated Earnings'] = estimated_shares_outstanding.copy()
 
 
 # created new workbook containing fundamentals condensed dataframe

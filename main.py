@@ -135,11 +135,11 @@ earnings_per_share_pivot_table.to_excel('earnings_per_share_pivot_table.xlsx')
 def highlight_earnings_per_share_pivot_table_values(dollar_amt):
     try:
         if dollar_amt > 0:
-            color = '#65F595'
+            color = '#65F595' # green
         elif dollar_amt == 0:
-            color = '#32ADF5'
+            color = '#32ADF5' # light blue
         elif dollar_amt < 0:
-            color = '#FA291A'
+            color = '#FA291A' # red
         else:
             color = None
         return f'background-color: {color}'
@@ -152,3 +152,7 @@ earnings_per_share_pivot_table = \
 
 earnings_per_share_pivot_table.\
     to_excel('earnings_per_share_pivot_table.xlsx')
+
+# *AUTOMATICALLY ADJUSTING WIDTH FOR ALL COLUMNS*
+
+#using excelwriter to auto adjust widths for all columns

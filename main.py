@@ -115,7 +115,7 @@ earnings_df['Estimated Earnings Grade'] = estimated_earnings_status
 earnings_df.to_excel('earnings_df.xlsx', index=False)
 
 
-# *DATAFRAME PER SELECTED STOCK*
+# *DATAFRAME PER SELECTED STOCK* IN PROGRESS
 
 #appl (apple) stock
 def appl(df):

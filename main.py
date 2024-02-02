@@ -196,11 +196,19 @@ earnings_per_share_pivot_table.\
 
 
 # *CHARTS*
-
-#using matplotlib to develop AAPL yearly earnings per share pie chart
+# using matplotlib
 import matplotlib.pyplot as plt
+# AAPL yearly earnings per share pie chart
 file = pd.read_excel('aapl_stock_yearly_earnings_per_share_df.xlsx')
 plt.title('AAPL Yearly Earnings Per Share')
+plt.xlabel("For Year")
+plt.ylabel("Earnings Per Share")
+plt.pie(file['Earnings Per Share'],labels=file['For Year'])
+plt.show()
+
+# MSFT yearly earnings per share pie chart
+file = pd.read_excel('msft_stock_yearly_earnings_per_share_df.xlsx')
+plt.title('MSFT Yearly Earnings Per Share')
 plt.xlabel("For Year")
 plt.ylabel("Earnings Per Share")
 plt.pie(file['Earnings Per Share'],labels=file['For Year'])

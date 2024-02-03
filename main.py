@@ -170,8 +170,8 @@ nflx_stock_yearly_earnings_per_share_df.\
 # remove rows from single stock df if the following:
 #   earnings per share or estimated earnings is blank
 def earnings_per_share_or_estimated_earnings(df):
-    return df[df['Earnings Per Share'].isna() |
-              df['Estimated Earnings'].isna()]
+    return df[df['Earnings Per Share'].notna() |
+              df['Estimated Earnings'].notna()]
 # nflx
 nflx_stock_yearly_earnings_per_share_df = \
     earnings_per_share_or_estimated_earnings(

@@ -154,6 +154,15 @@ msft_stock_yearly_earnings_per_share_df = \
 msft_stock_yearly_earnings_per_share_df.\
     to_excel('msft_stock_yearly_earnings_per_share_df.xlsx', index=False)
 
+#nflx (netflix) stock
+def nflx_yearly_earnings(df):
+    return df[df['Ticker Symbol'] == 'NFLX']
+
+nflx_stock_yearly_earnings_per_share_df = \
+    nflx_yearly_earnings(earnings_df)
+
+nflx_stock_yearly_earnings_per_share_df.\
+    to_excel('nflx_stock_yearly_earnings_per_share_df.xlsx', index=False)
 
 
 # *PIVOT TABLES*

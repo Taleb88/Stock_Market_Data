@@ -165,6 +165,22 @@ nflx_stock_yearly_earnings_per_share_df.\
     to_excel('nflx_stock_yearly_earnings_per_share_df.xlsx', index=False)
 
 
+# *REMOVE CERTAIN ROWS UNDER CERTAIN CONDITIONS*
+
+# remove rows from single stock df if the following:
+#   earnings per share or estimated earnings is blank
+def earnings_per_share_or_estimated_earnings(df):
+    return df[df['Earnings Per Share'].isna() |
+              df['Estimated Earnings'].isna()]
+# nflx
+nflx_stock_yearly_earnings_per_share_df = \
+    earnings_per_share_or_estimated_earnings(
+        nflx_stock_yearly_earnings_per_share_df
+    )
+# save/updates sheet
+nflx_stock_yearly_earnings_per_share_df.\
+    to_excel('nflx_stock_yearly_earnings_per_share_df.xlsx', index=False)
+
 # *PIVOT TABLES*
 
 #earnings per share pivot table

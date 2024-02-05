@@ -165,6 +165,14 @@ nflx_stock_yearly_earnings_per_share_df.\
     to_excel('nflx_stock_yearly_earnings_per_share_df.xlsx', index=False)
 
 #pfe (pfizer) stock
+def pfe_yearly_earnings(df):
+    return df[df['Ticker Symbol'] == 'PFE']
+
+pfe_stock_yearly_earnings_per_share_df = \
+    pfe_yearly_earnings(earnings_df)
+
+pfe_stock_yearly_earnings_per_share_df.\
+    to_excel('pfe_stock_yearly_earnings_per_share_df.xlsx', index=False)
 
 
 # *REMOVE CERTAIN ROWS UNDER CERTAIN CONDITIONS*

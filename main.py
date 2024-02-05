@@ -202,6 +202,15 @@ nflx_stock_yearly_earnings_per_share_df = \
 nflx_stock_yearly_earnings_per_share_df.\
     to_excel('nflx_stock_yearly_earnings_per_share_df.xlsx', index=False)
 
+# nke
+nke_stock_yearly_earnings_per_share_df = \
+    earnings_per_share_or_estimated_earnings(
+        nke_stock_yearly_earnings_per_share_df
+    )
+# save/updates sheet
+nke_stock_yearly_earnings_per_share_df.\
+    to_excel('nke_stock_yearly_earnings_per_share_df.xlsx', index=False)
+
 
 
 # *PIVOT TABLES*

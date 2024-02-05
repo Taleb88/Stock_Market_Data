@@ -174,6 +174,17 @@ pfe_stock_yearly_earnings_per_share_df = \
 pfe_stock_yearly_earnings_per_share_df.\
     to_excel('pfe_stock_yearly_earnings_per_share_df.xlsx', index=False)
 
+#nke (nike) stock
+def nke_yearly_earnings(df):
+    return df[df['Ticker Symbol'] == 'NKE']
+
+nke_stock_yearly_earnings_per_share_df = \
+    nke_yearly_earnings(earnings_df)
+
+nke_stock_yearly_earnings_per_share_df.\
+    to_excel('nke_stock_yearly_earnings_per_share_df.xlsx', index=False)
+
+
 
 # *REMOVE CERTAIN ROWS UNDER CERTAIN CONDITIONS*
 
@@ -190,6 +201,7 @@ nflx_stock_yearly_earnings_per_share_df = \
 # save/updates sheet
 nflx_stock_yearly_earnings_per_share_df.\
     to_excel('nflx_stock_yearly_earnings_per_share_df.xlsx', index=False)
+
 
 
 # *PIVOT TABLES*

@@ -258,6 +258,14 @@ plt.ylabel("Earnings Per Share")
 plt.pie(file['Earnings Per Share'],labels=file['For Year'])
 plt.show()
 
+# PFE yearly earnings per share pie chart
+file = pd.read_excel('pfe_stock_yearly_earnings_per_share_df.xlsx')
+plt.title('PFE Yearly Earnings Per Share')
+plt.xlabel("For Year")
+plt.ylabel("Earnings Per Share")
+plt.pie(file['Earnings Per Share'],labels=file['For Year'])
+plt.show()
+
 
 # *AUTOMATICALLY ADJUSTING WIDTH FOR ALL COLUMNS*
 

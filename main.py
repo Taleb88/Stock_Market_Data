@@ -191,6 +191,7 @@ nflx_stock_yearly_earnings_per_share_df = \
 nflx_stock_yearly_earnings_per_share_df.\
     to_excel('nflx_stock_yearly_earnings_per_share_df.xlsx', index=False)
 
+
 # *PIVOT TABLES*
 
 #earnings per share pivot table

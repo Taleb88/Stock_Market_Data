@@ -184,6 +184,15 @@ nke_stock_yearly_earnings_per_share_df = \
 nke_stock_yearly_earnings_per_share_df.\
     to_excel('nke_stock_yearly_earnings_per_share_df.xlsx', index=False)
 
+#bmy (bristol-myers squibb) stock
+def bmy_yearly_earnings(df):
+    return df[df['Ticker Symbol'] == 'BMY']
+
+bmy_stock_yearly_earnings_per_share_df = \
+    bmy_yearly_earnings(earnings_df)
+
+bmy_stock_yearly_earnings_per_share_df.\
+    to_excel('bmy_stock_yearly_earnings_per_share_df.xlsx', index=False)
 
 
 # *REMOVE CERTAIN ROWS UNDER CERTAIN CONDITIONS*

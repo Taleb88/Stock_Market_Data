@@ -236,6 +236,18 @@ earnings_per_share_pivot_table = pd.pivot_table(
 earnings_per_share_pivot_table.to_excel('earnings_per_share_pivot_table.xlsx')
 
 
+# *MERGING*
+#msft and nflx merge
+msft_and_nflx_yearly_earnings_per_share = pd.merge(
+    msft_stock_yearly_earnings_per_share_df,
+    nflx_stock_yearly_earnings_per_share_df,
+    on='For Year'
+)
+
+msft_and_nflx_yearly_earnings_per_share.\
+    to_excel('msft_and_nflx_yearly_earnings_per_share_merge.xlsx', index=False)
+
+
 # *CONDITIONAL FORMATTING*
 #earnings per share pivot table, cells highlighted with certain colors
 def highlight_earnings_per_share_pivot_table_values(dollar_amt):
@@ -258,18 +270,6 @@ earnings_per_share_pivot_table = \
 
 earnings_per_share_pivot_table.\
     to_excel('earnings_per_share_pivot_table.xlsx')
-
-
-# *MERGING*
-#msft and nflx merge
-msft_and_nflx_yearly_earnings_per_share = pd.merge(
-    msft_stock_yearly_earnings_per_share_df,
-    nflx_stock_yearly_earnings_per_share_df,
-    on='For Year'
-)
-
-msft_and_nflx_yearly_earnings_per_share.\
-    to_excel('msft_and_nflx_yearly_earnings_per_share_merge.xlsx', index=False)
 
 
 # *CHARTS*

@@ -245,7 +245,8 @@ msft_and_nflx_yearly_earnings_per_share_merge = pd.merge(
 )
 
 msft_and_nflx_yearly_earnings_per_share_merge.\
-    to_excel('msft_and_nflx_yearly_earnings_per_share_merge.xlsx', index=False)
+    to_excel('msft_and_nflx_yearly_earnings_per_share_merge.xlsx',
+             index=False)
 
 # *CONCAT FRAMES*
 #blue chip stocks only
@@ -262,7 +263,8 @@ blue_chip_stocks_concat = \
         blue_chip_stocks_yearly_earnings_per_share_frames
     )
 
-blue_chip_stocks_concat.to_excel('blue_chip_stocks_concat.xlsx')
+blue_chip_stocks_concat.\
+    to_excel('blue_chip_stocks_yearly_earnings_per_share_concat.xlsx')
 
 
 # *CONDITIONAL FORMATTING*

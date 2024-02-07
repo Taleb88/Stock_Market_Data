@@ -274,7 +274,7 @@ negative_yearly_earnings_per_share_2013_df.\
     to_excel('negative_yearly_earnings_per_share_2013_df.xlsx')
 
 
-# *MERGING*
+# *MERGING DATAFRAMES*
 #msft and nflx merge
 msft_and_nflx_yearly_earnings_per_share_merge = pd.merge(
     msft_stock_yearly_earnings_per_share_df,

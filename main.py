@@ -275,7 +275,15 @@ negative_yearly_earnings_per_share_2012_df = \
 
 negative_yearly_earnings_per_share_2012_df = \
     negative_yearly_earnings_per_share_2012_df.drop(
-        ['2003', '2004', '2006', '2007', '2013', '2014', '2015', '2016', '2017'],
+        ['2003',
+         '2004',
+         '2006',
+         '2007',
+         '2013',
+         '2014',
+         '2015',
+         '2016',
+         '2017'],
         axis=1
     )
 
@@ -294,7 +302,15 @@ negative_yearly_earnings_per_share_2013_df = \
 
 negative_yearly_earnings_per_share_2013_df = \
     negative_yearly_earnings_per_share_2013_df.drop(
-        ['2003', '2004', '2006', '2007', '2012', '2014', '2015', '2016', '2017'],
+        ['2003',
+         '2004',
+         '2006',
+         '2007',
+         '2012',
+         '2014',
+         '2015',
+         '2016',
+         '2017'],
         axis=1
     )
 
@@ -309,11 +325,21 @@ def negative_yearly_earnings_per_share_2014(df):
               f'Unable to filter rows')
 
 negative_yearly_earnings_per_share_2014_df = \
-    negative_yearly_earnings_per_share_2014(yearly_earnings_per_share_pivot_table)
+    negative_yearly_earnings_per_share_2014(
+        yearly_earnings_per_share_pivot_table
+    )
 
 negative_yearly_earnings_per_share_2014_df = \
     negative_yearly_earnings_per_share_2014_df.drop(
-        ['2003', '2004', '2006', '2007', '2012', '2013', '2015', '2016', '2017'],
+        ['2003',
+         '2004',
+         '2006',
+         '2007',
+         '2012',
+         '2013',
+         '2015',
+         '2016',
+         '2017'],
         axis=1
     )
 

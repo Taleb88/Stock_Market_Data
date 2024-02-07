@@ -136,7 +136,11 @@ earnings_df.to_excel('earnings_df.xlsx', index=False)
 
 #appl (apple) stock
 def appl_yearly_earnings(df):
-    return df[df['Ticker Symbol'] == 'AAPL']
+    try:
+        return df[df['Ticker Symbol'] == 'AAPL']
+    except Exception as e:
+        print(f'cannot {type(e)}: e \n'
+              f'Unable to filter rows')
 
 aapl_stock_yearly_earnings_per_share_df = \
     appl_yearly_earnings(earnings_df)
@@ -146,7 +150,11 @@ aapl_stock_yearly_earnings_per_share_df.\
 
 #msft (microsoft) stock
 def msft_yearly_earnings(df):
-    return df[df['Ticker Symbol'] == 'MSFT']
+    try:
+        return df[df['Ticker Symbol'] == 'MSFT']
+    except Exception as e:
+        print(f'cannot {type(e)}: e \n'
+              f'Unable to filter rows')
 
 msft_stock_yearly_earnings_per_share_df = \
     msft_yearly_earnings(earnings_df)
@@ -156,7 +164,11 @@ msft_stock_yearly_earnings_per_share_df.\
 
 #nflx (netflix) stock
 def nflx_yearly_earnings(df):
-    return df[df['Ticker Symbol'] == 'NFLX']
+    try:
+        return df[df['Ticker Symbol'] == 'NFLX']
+    except Exception as e:
+        print(f'cannot {type(e)}: e \n'
+              f'Unable to filter rows')
 
 nflx_stock_yearly_earnings_per_share_df = \
     nflx_yearly_earnings(earnings_df)
@@ -166,7 +178,11 @@ nflx_stock_yearly_earnings_per_share_df.\
 
 #pfe (pfizer) stock
 def pfe_yearly_earnings(df):
-    return df[df['Ticker Symbol'] == 'PFE']
+    try:
+        return df[df['Ticker Symbol'] == 'PFE']
+    except Exception as e:
+        print(f'cannot {type(e)}: e \n'
+              f'Unable to filter rows')
 
 pfe_stock_yearly_earnings_per_share_df = \
     pfe_yearly_earnings(earnings_df)
@@ -176,7 +192,11 @@ pfe_stock_yearly_earnings_per_share_df.\
 
 #nke (nike) stock
 def nke_yearly_earnings(df):
-    return df[df['Ticker Symbol'] == 'NKE']
+    try:
+        return df[df['Ticker Symbol'] == 'NKE']
+    except Exception as e:
+        print(f'cannot {type(e)}: e \n'
+              f'Unable to filter rows')
 
 nke_stock_yearly_earnings_per_share_df = \
     nke_yearly_earnings(earnings_df)
@@ -186,7 +206,11 @@ nke_stock_yearly_earnings_per_share_df.\
 
 #bmy (bristol-myers squibb) stock
 def bmy_yearly_earnings(df):
-    return df[df['Ticker Symbol'] == 'BMY']
+    try:
+        return df[df['Ticker Symbol'] == 'BMY']
+    except Exception as e:
+        print(f'cannot {type(e)}: e \n'
+              f'Unable to filter rows')
 
 bmy_stock_yearly_earnings_per_share_df = \
     bmy_yearly_earnings(earnings_df)
@@ -200,8 +224,12 @@ bmy_stock_yearly_earnings_per_share_df.\
 # remove rows from single stock df if the following:
 #   earnings per share or estimated earnings is blank
 def earnings_per_share_or_estimated_earnings(df):
-    return df[df['Earnings Per Share'].notna() |
-              df['Estimated Earnings'].notna()]
+    try:
+        return df[df['Earnings Per Share'].notna() |
+                  df['Estimated Earnings'].notna()]
+    except Exception as e:
+        print(f'cannot {type(e)}: e \n'
+              f'Unable to filter rows')
 # nflx
 nflx_stock_yearly_earnings_per_share_df = \
     earnings_per_share_or_estimated_earnings(
@@ -272,6 +300,7 @@ negative_yearly_earnings_per_share_2013_df = \
 
 negative_yearly_earnings_per_share_2013_df.\
     to_excel('negative_yearly_earnings_per_share_2013_df.xlsx')
+
 
 
 # *MERGING DATAFRAMES*

@@ -403,7 +403,7 @@ negative_yearly_earnings_per_share_2016_df = \
 
 negative_yearly_earnings_per_share_2016_df.\
     to_excel('negative_yearly_earnings_per_share_2016_df.xlsx')
-#2017
+#2017 - TABLE EXPECTED TO BE BLANK
 def negative_yearly_earnings_per_share_2017(df):
     try:
         return df[df['2017'] < 0.0]
@@ -462,7 +462,7 @@ blue_chip_stocks_concat = \
     )
 
 blue_chip_stocks_concat.\
-    to_excel('blue_chip_stocks_yearly_earnings_per_share_concat.xlsx')
+    to_excel('blue_chip_stocks_yearly_earnings_per_share_concat.xlsx', index=False)
 
 
 # *CONDITIONAL FORMATTING*

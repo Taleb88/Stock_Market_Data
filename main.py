@@ -245,7 +245,7 @@ negative_yearly_earnings_per_share_2012_df = \
     negative_yearly_earnings_per_share_2012(yearly_earnings_per_share_pivot_table)
 
 negative_yearly_earnings_per_share_2012_df.\
-    to_excel('negative_yearly_earnings_per_share_2012_df.xlsx', index=False)
+    to_excel('negative_yearly_earnings_per_share_2012_df.xlsx')
 
 # *MERGING*
 #msft and nflx merge

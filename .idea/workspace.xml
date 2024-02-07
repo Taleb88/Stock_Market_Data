@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59ed4c5e-5ee8-4e58-a702-0b0a502d3af4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/blue_chip_stocks_concat.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aapl_stock_yearly_earnings_per_share_df.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/aapl_stock_yearly_earnings_per_share_df.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmy_stock_yearly_earnings_per_share_df.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/bmy_stock_yearly_earnings_per_share_df.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/earnings_df.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/earnings_df.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/earnings_per_share_pivot_table.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/earnings_per_share_pivot_table.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fundamentals_condensed_df.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/fundamentals_condensed_df.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msft_and_nflx_yearly_earnings_per_share_merge.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/msft_and_nflx_yearly_earnings_per_share_merge.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msft_stock_yearly_earnings_per_share_df.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/msft_stock_yearly_earnings_per_share_df.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nflx_stock_yearly_earnings_per_share_df.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/nflx_stock_yearly_earnings_per_share_df.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nke_stock_yearly_earnings_per_share_df.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/nke_stock_yearly_earnings_per_share_df.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pfe_stock_yearly_earnings_per_share_df.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/pfe_stock_yearly_earnings_per_share_df.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

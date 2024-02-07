@@ -220,12 +220,10 @@ nke_stock_yearly_earnings_per_share_df = \
 nke_stock_yearly_earnings_per_share_df.\
     to_excel('nke_stock_yearly_earnings_per_share_df.xlsx', index=False)
 
-
-
 # *PIVOT TABLES*
 
 #earnings per share pivot table
-earnings_per_share_pivot_table = pd.pivot_table(
+yearly_earnings_per_share_pivot_table = pd.pivot_table(
     earnings_df,
     index='Ticker Symbol',
     columns='For Year',
@@ -233,8 +231,21 @@ earnings_per_share_pivot_table = pd.pivot_table(
     aggfunc='sum'
 )
 
-earnings_per_share_pivot_table.to_excel('earnings_per_share_pivot_table.xlsx')
+yearly_earnings_per_share_pivot_table.to_excel('yearly_earnings_per_share_pivot_table.xlsx')
 
+#negative yearly earnings per share only (pivot table) for 2012-2017 filter
+def negative_yearly_earnings_per_share_2012(df):
+    try:
+        return df[df['2012'] < 0.0]
+    except Exception as e:
+        print(f'cannot {type(e)}: e \n'
+              f'Unable to filter rows')
+
+negative_yearly_earnings_per_share_2012_df = \
+    negative_yearly_earnings_per_share_2012(yearly_earnings_per_share_pivot_table)
+
+negative_yearly_earnings_per_share_2012_df.\
+    to_excel('negative_yearly_earnings_per_share_pivot_table')
 
 # *MERGING*
 #msft and nflx merge

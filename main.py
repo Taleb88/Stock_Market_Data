@@ -294,11 +294,11 @@ def highlight_earnings_per_share_pivot_table_values(dollar_amt):
     except:
         print('Error. Unable to highlight cells.')
 
-earnings_per_share_pivot_table = \
-    earnings_per_share_pivot_table.style.\
+yearly_earnings_per_share_pivot_table = \
+    yearly_earnings_per_share_pivot_table.style.\
         applymap(highlight_earnings_per_share_pivot_table_values)
 
-earnings_per_share_pivot_table.\
+yearly_earnings_per_share_pivot_table.\
     to_excel('earnings_per_share_pivot_table.xlsx')
 
 

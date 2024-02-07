@@ -462,7 +462,8 @@ blue_chip_stocks_concat = \
     )
 
 blue_chip_stocks_concat.\
-    to_excel('blue_chip_stocks_yearly_earnings_per_share_concat.xlsx', index=False)
+    to_excel('blue_chip_stocks_yearly_earnings_per_share_concat.xlsx',
+             index=False)
 
 
 # *CONDITIONAL FORMATTING*

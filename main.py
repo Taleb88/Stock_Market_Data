@@ -234,6 +234,7 @@ yearly_earnings_per_share_pivot_table = pd.pivot_table(
 yearly_earnings_per_share_pivot_table.to_excel('yearly_earnings_per_share_pivot_table.xlsx')
 
 #negative yearly earnings per share only (pivot table) for 2012-2017 filter
+#2012
 def negative_yearly_earnings_per_share_2012(df):
     try:
         return df[df['2012'] < 0.0]
@@ -252,7 +253,25 @@ negative_yearly_earnings_per_share_2012_df = \
 
 negative_yearly_earnings_per_share_2012_df.\
     to_excel('negative_yearly_earnings_per_share_2012_df.xlsx')
+#2013
+def negative_yearly_earnings_per_share_2013(df):
+    try:
+        return df[df['2013'] < 0.0]
+    except Exception as e:
+        print(f'cannot {type(e)}: e \n'
+              f'Unable to filter rows')
 
+negative_yearly_earnings_per_share_2013_df = \
+    negative_yearly_earnings_per_share_2013(yearly_earnings_per_share_pivot_table)
+
+negative_yearly_earnings_per_share_2013_df = \
+    negative_yearly_earnings_per_share_2013_df.drop(
+        ['2003', '2004', '2006', '2007', '2012', '2014', '2015', '2016', '2017'],
+        axis=1
+    )
+
+negative_yearly_earnings_per_share_2013_df.\
+    to_excel('negative_yearly_earnings_per_share_2013_df.xlsx')
 
 
 # *MERGING*

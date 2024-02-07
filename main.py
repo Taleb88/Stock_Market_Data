@@ -269,7 +269,7 @@ msft_and_nflx_yearly_earnings_per_share = pd.merge(
 )
 
 msft_and_nflx_yearly_earnings_per_share.\
-    to_excel('msft_and_nflx_yearly_earnings_per_share_merge.xlsx')
+    to_excel('msft_and_nflx_yearly_earnings_per_share_merge.xlsx', index=False)
 
 
 # *CHARTS*

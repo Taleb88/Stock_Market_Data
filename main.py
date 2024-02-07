@@ -244,8 +244,15 @@ def negative_yearly_earnings_per_share_2012(df):
 negative_yearly_earnings_per_share_2012_df = \
     negative_yearly_earnings_per_share_2012(yearly_earnings_per_share_pivot_table)
 
+negative_yearly_earnings_per_share_2012_df = \
+    negative_yearly_earnings_per_share_2012_df.drop(
+        ['2003', '2004', '2006', '2007', '2013', '2014', '2015', '2016', '2017'],
+        axis=1)
+
 negative_yearly_earnings_per_share_2012_df.\
     to_excel('negative_yearly_earnings_per_share_2012_df.xlsx')
+
+
 
 # *MERGING*
 #msft and nflx merge

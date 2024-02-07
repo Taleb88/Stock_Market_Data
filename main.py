@@ -486,7 +486,7 @@ yearly_earnings_per_share_pivot_table = \
         applymap(highlight_earnings_per_share_pivot_table_values)
 
 yearly_earnings_per_share_pivot_table.\
-    to_excel('earnings_per_share_pivot_table.xlsx')
+    to_excel('yearly_earnings_per_share_pivot_table.xlsx')
 
 
 # *CHARTS*

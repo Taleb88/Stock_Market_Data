@@ -78,22 +78,22 @@ fundamentals_condensed_df.to_excel('fundamentals_condensed_df.xlsx', index=False
 
 
 # creating earnings dataframe from fundamentals condensed dataframe
-earnings_df = pd.DataFrame()
+yearly_earnings_df = pd.DataFrame()
 id = fundamentals_condensed_df.iloc[:,0]
-earnings_df['ID'] = id.copy()
+yearly_earnings_df['ID'] = id.copy()
 ticker_symbol = fundamentals_condensed_df.iloc[:,1]
-earnings_df['Ticker Symbol'] = ticker_symbol.copy()
+yearly_earnings_df['Ticker Symbol'] = ticker_symbol.copy()
 for_year = fundamentals_condensed_df.iloc[:,13]
-earnings_df['For Year'] = for_year.copy()
+yearly_earnings_df['For Year'] = for_year.copy()
 earnings_per_share = fundamentals_condensed_df.iloc[:,14]
-earnings_df['Earnings Per Share'] = earnings_per_share.copy()
+yearly_earnings_df['Earnings Per Share'] = earnings_per_share.copy()
 estimated_shares_outstanding = fundamentals_condensed_df.iloc[:,15]
-earnings_df['Estimated Earnings'] = estimated_shares_outstanding.copy()
+yearly_earnings_df['Estimated Earnings'] = estimated_shares_outstanding.copy()
 
 #creating new earnings per share plus minus column
 earnings_per_share_plus_minus = []
 
-for value in earnings_df['Earnings Per Share']:
+for value in yearly_earnings_df['Earnings Per Share']:
     try:
         if value >= 0:
             earnings_per_share_plus_minus.append('(+)')
@@ -104,12 +104,12 @@ for value in earnings_df['Earnings Per Share']:
     except:
         print('Error. Cannot append plus/minus value(s).')
 
-earnings_df['Earnings Per Share +/-'] = earnings_per_share_plus_minus
+yearly_earnings_df['Earnings Per Share +/-'] = earnings_per_share_plus_minus
 
 #creating new estimated earnings grade column
 estimated_earnings_status = []
 
-for value in earnings_df['Estimated Earnings']:
+for value in yearly_earnings_df['Estimated Earnings']:
     try:
         if value >= 500000000:
             estimated_earnings_status.append('Excellent')
@@ -126,10 +126,10 @@ for value in earnings_df['Estimated Earnings']:
     except:
         print('Error. Cannot append estimated earnings status values.')
 
-earnings_df['Estimated Earnings Grade'] = estimated_earnings_status
+yearly_earnings_df['Estimated Earnings Grade'] = estimated_earnings_status
 
 # created new workbook containing fundamentals condensed dataframe
-earnings_df.to_excel('earnings_df.xlsx', index=False)
+yearly_earnings_df.to_excel('yearly_earnings_df.xlsx', index=False)
 
 
 # *DATAFRAME PER SELECTED STOCK*
@@ -143,7 +143,7 @@ def appl_yearly_earnings(df):
               f'Unable to filter rows')
 
 aapl_stock_yearly_earnings_per_share_df = \
-    appl_yearly_earnings(earnings_df)
+    appl_yearly_earnings(yearly_earnings_df)
 
 aapl_stock_yearly_earnings_per_share_df.\
     to_excel('aapl_stock_yearly_earnings_per_share_df.xlsx', index=False)
@@ -157,7 +157,7 @@ def msft_yearly_earnings(df):
               f'Unable to filter rows')
 
 msft_stock_yearly_earnings_per_share_df = \
-    msft_yearly_earnings(earnings_df)
+    msft_yearly_earnings(yearly_earnings_df)
 
 msft_stock_yearly_earnings_per_share_df.\
     to_excel('msft_stock_yearly_earnings_per_share_df.xlsx', index=False)
@@ -171,7 +171,7 @@ def nflx_yearly_earnings(df):
               f'Unable to filter rows')
 
 nflx_stock_yearly_earnings_per_share_df = \
-    nflx_yearly_earnings(earnings_df)
+    nflx_yearly_earnings(yearly_earnings_df)
 
 nflx_stock_yearly_earnings_per_share_df.\
     to_excel('nflx_stock_yearly_earnings_per_share_df.xlsx', index=False)
@@ -185,7 +185,7 @@ def pfe_yearly_earnings(df):
               f'Unable to filter rows')
 
 pfe_stock_yearly_earnings_per_share_df = \
-    pfe_yearly_earnings(earnings_df)
+    pfe_yearly_earnings(yearly_earnings_df)
 
 pfe_stock_yearly_earnings_per_share_df.\
     to_excel('pfe_stock_yearly_earnings_per_share_df.xlsx', index=False)
@@ -199,7 +199,7 @@ def nke_yearly_earnings(df):
               f'Unable to filter rows')
 
 nke_stock_yearly_earnings_per_share_df = \
-    nke_yearly_earnings(earnings_df)
+    nke_yearly_earnings(yearly_earnings_df)
 
 nke_stock_yearly_earnings_per_share_df.\
     to_excel('nke_stock_yearly_earnings_per_share_df.xlsx', index=False)
@@ -213,7 +213,7 @@ def bmy_yearly_earnings(df):
               f'Unable to filter rows')
 
 bmy_stock_yearly_earnings_per_share_df = \
-    bmy_yearly_earnings(earnings_df)
+    bmy_yearly_earnings(yearly_earnings_df)
 
 bmy_stock_yearly_earnings_per_share_df.\
     to_excel('bmy_stock_yearly_earnings_per_share_df.xlsx', index=False)
@@ -252,7 +252,7 @@ nke_stock_yearly_earnings_per_share_df.\
 
 #earnings per share pivot table
 yearly_earnings_per_share_pivot_table = pd.pivot_table(
-    earnings_df,
+    yearly_earnings_df,
     index='Ticker Symbol',
     columns='For Year',
     values='Earnings Per Share',
@@ -467,7 +467,7 @@ blue_chip_stocks_concat.\
 
 # *CONDITIONAL FORMATTING*
 #earnings per share pivot table, cells highlighted with certain colors
-def highlight_earnings_per_share_pivot_table_values(dollar_amt):
+def highlight_yearly_earnings_per_share_pivot_table_values(dollar_amt):
     try:
         if dollar_amt > 0:
             color = '#65F595' # green
@@ -483,7 +483,7 @@ def highlight_earnings_per_share_pivot_table_values(dollar_amt):
 
 yearly_earnings_per_share_pivot_table = \
     yearly_earnings_per_share_pivot_table.style.\
-        applymap(highlight_earnings_per_share_pivot_table_values)
+        applymap(highlight_yearly_earnings_per_share_pivot_table_values)
 
 yearly_earnings_per_share_pivot_table.\
     to_excel('yearly_earnings_per_share_pivot_table.xlsx')
@@ -562,8 +562,8 @@ def auto_fit_excel_columns_and_rows(file_path):
 file_path = 'fundamentals_condensed_df.xlsx'
 auto_fit_excel_columns_and_rows(file_path)
 
-file_path = 'earnings_df.xlsx'
+file_path = 'yearly_earnings_df.xlsx'
 auto_fit_excel_columns_and_rows(file_path)
 
-file_path = 'earnings_per_share_pivot_table.xlsx'
+file_path = 'yearly_earnings_per_share_pivot_table.xlsx'
 auto_fit_excel_columns_and_rows(file_path)

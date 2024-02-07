@@ -262,7 +262,7 @@ blue_chip_stocks_concat = \
         blue_chip_stocks_yearly_earnings_per_share_frames
     )
 
-
+blue_chip_stocks_concat.to_excel('blue_chip_stocks_concat.xlsx')
 
 
 # *CONDITIONAL FORMATTING*

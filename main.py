@@ -491,11 +491,13 @@ yearly_earnings_per_share_pivot_table.\
 
 #lowest value -> negative yearly earnings per year
 #2012
-def highlight_min(x):
+def highlight_min_negative_yearly_earnings_value(x):
    min_val = x.min()
-   return ['background-color: yellow' if val == min_val else '' for val in x]
+   return ['background-color: red' if val == min_val else '' for val in x]
 
-negative_yearly_earnings_per_share_2012_df = negative_yearly_earnings_per_share_2012_df.style.apply(highlight_min)
+negative_yearly_earnings_per_share_2012_df = \
+    negative_yearly_earnings_per_share_2012_df.\
+        style.apply(highlight_min_negative_yearly_earnings_value)
 
 negative_yearly_earnings_per_share_2012_df.\
     to_excel('negative_yearly_earnings_per_share_2012_df.xlsx',

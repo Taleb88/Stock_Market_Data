@@ -518,6 +518,22 @@ negative_yearly_earnings_per_share_2014_df = \
 negative_yearly_earnings_per_share_2014_df.\
     to_excel('negative_yearly_earnings_per_share_2014_df.xlsx',
              index=False)
+#2015
+negative_yearly_earnings_per_share_2015_df = \
+    negative_yearly_earnings_per_share_2015_df.\
+        style.apply(highlight_min_negative_yearly_earnings_value)
+
+negative_yearly_earnings_per_share_2015_df.\
+    to_excel('negative_yearly_earnings_per_share_2015_df.xlsx',
+             index=False)
+#2016
+negative_yearly_earnings_per_share_2016_df = \
+    negative_yearly_earnings_per_share_2016_df.\
+        style.apply(highlight_min_negative_yearly_earnings_value)
+
+negative_yearly_earnings_per_share_2016_df.\
+    to_excel('negative_yearly_earnings_per_share_2016_df.xlsx',
+             index=False)
 
 
 # *CHARTS*

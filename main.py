@@ -489,14 +489,6 @@ yearly_earnings_per_share_pivot_table = \
 yearly_earnings_per_share_pivot_table.\
     to_excel('yearly_earnings_per_share_pivot_table.xlsx')
 
-#lowest value -> negative yearly earnings per year
-negative_yearly_earnings_per_share_2012_df = \
-    negative_yearly_earnings_per_share_2012_df.style.highlight_min()
-
-negative_yearly_earnings_per_share_2012_df.\
-    to_excel('negative_yearly_earnings_per_share_2012_df',
-             index=False)
-
 
 # *CHARTS*
 # using matplotlib

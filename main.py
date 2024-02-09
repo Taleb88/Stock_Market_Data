@@ -76,10 +76,10 @@ fundamentals_condensed_df['For Year'] = \
 # created new workbook containing fundamentals condensed dataframe
 fundamentals_condensed_df.to_excel('fundamentals_condensed_df.xlsx', index=False)
 
-# created unique ticker symbols list
-ticker_symbols_list_df = fundamentals_condensed_df["Ticker Symbol"].unique()
-ticker_symbols_list_df.\
-    to_excel('ticker_symbols_list_df.xlsx', index=False)
+# attempting to create unique ticker symbols list via function()
+#ticker_symbols_list_df = fundamentals_condensed_df["Ticker Symbol"].unique()
+#ticker_symbols_list_df.\
+#    to_excel('ticker_symbols_list_df.xlsx', index=False)
 
 # creating earnings dataframe from fundamentals condensed dataframe
 yearly_earnings_df = pd.DataFrame()

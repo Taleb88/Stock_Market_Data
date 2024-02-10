@@ -76,7 +76,8 @@ fundamentals_condensed_df['For Year'] = \
 # created new workbook containing fundamentals condensed dataframe
 fundamentals_condensed_df.to_excel('fundamentals_condensed_df.xlsx', index=False)
 
-
+'''
+# *CODE WORKS BUT FREEZES PROGRAM WHEN RUNNING*
 #attempting to create unique ticker symbols list via conversion to a set
 #   create new unique ticker symbols list df from fundamentals_condensed_df
 #   drop all columns from new df via .drop([]) method except for ticker symbol column
@@ -101,12 +102,13 @@ unique_ticker_symbols_list_df = fundamentals_condensed_df.drop(
 #   save new unique ticker symbols list df
 unique_ticker_symbols_list_df.\
     to_excel('unique_ticker_symbols_list_df.xlsx', index=False)
-#   use unique() method for ticker symbol column
-unique_ticker_symbols_list_df = unique_ticker_symbols_list_df['Ticker Symbol'].unique()
+#   make values unique under ticker symbol column
+unique_ticker_symbols_list_df = \
+    unique_ticker_symbols_list_df.drop_duplicates(subset=['Ticker Symbol'])
 #   save updated unique ticker symbols list df
 unique_ticker_symbols_list_df.\
-    to_excel('unique_ticker_symbols_list_df', index=False)
-
+    to_excel('unique_ticker_symbols_list_df.xlsx', index=False)
+'''
 
 # creating earnings dataframe from fundamentals condensed dataframe
 yearly_earnings_df = pd.DataFrame()

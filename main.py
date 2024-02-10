@@ -102,7 +102,10 @@ unique_ticker_symbols_list_df = fundamentals_condensed_df.drop(
 unique_ticker_symbols_list_df.\
     to_excel('unique_ticker_symbols_list_df.xlsx', index=False)
 #   use unique() method for ticker symbol column
+unique_ticker_symbols_list_df = unique_ticker_symbols_list_df['Ticker Symbol'].unique()
 #   save updated unique ticker symbols list df
+unique_ticker_symbols_list_df.\
+    to_excel('unique_ticker_symbols_list_df', index=False)
 
 
 # creating earnings dataframe from fundamentals condensed dataframe

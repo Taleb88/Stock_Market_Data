@@ -79,8 +79,29 @@ fundamentals_condensed_df.to_excel('fundamentals_condensed_df.xlsx', index=False
 
 #attempting to create unique ticker symbols list via conversion to a set
 #   create new unique ticker symbols list df from fundamentals_condensed_df
+unique_ticker_symbols_list_df = fundamentals_condensed_df
 #   drop all columns from new df via .drop([]) method except for ticker symbol column
+unique_ticker_symbols_list_df.drop(
+        ['ID',
+         'Period Ending',
+         'Accounts Payable',
+         'Accounts Receivable',
+         'Gross Profit',
+         'Intangible Assets',
+         'Interest Expense',
+         'Investments',
+         'Liabilities',
+         'Long-Term Debt',
+         'Long-Term Investments',
+         'Minority Interest',
+         'For Year',
+         'Earnings Per Share',
+         'Estimated Shares Outstanding'],
+        axis=1
+    )
 #   save new unique ticker symbols list df
+unique_ticker_symbols_list_df.\
+    to_excel('unique_ticker_symbols_list_df.xlsx', index=False)
 #   use unique() method for ticker symbol column
 #   save updated unique ticker symbols list df
 

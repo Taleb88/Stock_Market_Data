@@ -666,7 +666,7 @@ yearly_earnings_per_share_pivot_table.\
 #2012
 def highlight_max_positive_yearly_earnings_value(x):
    max_val = x.max()
-   return ['background-color: red' if val == max_val else '' for val in x]
+   return ['background-color: yellow' if val == max_val else '' for val in x]
 
 positive_yearly_earnings_per_share_2012_df = \
     positive_yearly_earnings_per_share_2012_df.\

@@ -79,7 +79,7 @@ fundamentals_condensed_df.to_excel('fundamentals_condensed_df.xlsx', index=False
 
 #attempting to create unique ticker symbols list via conversion to a set
 #   create new unique ticker symbols list df from fundamentals_condensed_df
-#   drop all columns from new df via .drop([]) method
+#   drop all columns from new df via .drop([]) method except for ticker symbol column
 #   save new unique ticker symbols list df
 #   use unique() method for ticker symbol column
 #   save updated unique ticker symbols list df

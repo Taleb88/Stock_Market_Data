@@ -76,19 +76,14 @@ fundamentals_condensed_df['For Year'] = \
 # created new workbook containing fundamentals condensed dataframe
 fundamentals_condensed_df.to_excel('fundamentals_condensed_df.xlsx', index=False)
 
-# attempting to create unique ticker symbols list via conversion to a set
-unique_ticker_symbol_values = fundamentals_condensed_df['Ticker Symbol'].unique()
 
-unique_ticker_symbols_list_df = pd.DataFrame({'Ticker Symbol': unique_ticker_symbol_values})
-#creating pandas excel writer via xlsxwriter
-writer = pd.ExcelWriter('unique_ticker_symbols_list_df.xlsx',
-                        engine='xlsxwriter')
+#attempting to create unique ticker symbols list via conversion to a set
+#   create new unique ticker symbols list df from fundamentals_condensed_df
+#   drop all columns from new df via .drop([]) method
+#   save new unique ticker symbols list df
+#   use unique() method for ticker symbol column
+#   save updated unique ticker symbols list df
 
-unique_ticker_symbols_list_df.to_excel(writer,
-                                       sheet_name='Sheet1',
-                                       index=False)
-# close excel writer and save file
-writer.save()
 
 # creating earnings dataframe from fundamentals condensed dataframe
 yearly_earnings_df = pd.DataFrame()

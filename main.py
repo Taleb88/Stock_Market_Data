@@ -76,11 +76,8 @@ fundamentals_condensed_df['For Year'] = \
 # created new workbook containing fundamentals condensed dataframe
 fundamentals_condensed_df.to_excel('fundamentals_condensed_df.xlsx', index=False)
 
-# attempting to create unique ticker symbols list via function()
-def unique_ticker_symbols_list(df):
-    return df[df['Ticker Symbol'].unique()]
-
-unique_ticker_symbols_list_df = unique_ticker_symbols_list(fundamentals_condensed_df)
+# attempting to create unique ticker symbols list via conversion to a set
+unique_ticker_symbols_list_df = set(fundamentals_condensed_df['Symbol'])
 
 unique_ticker_symbols_list_df.\
     to_excel('unique_ticker_symbols_list_df.xlsx', index=False)

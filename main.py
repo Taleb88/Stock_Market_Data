@@ -131,7 +131,7 @@ yearly_earnings_df['Estimated Earnings Grade'] = estimated_earnings_status
 yearly_earnings_df.to_excel('yearly_earnings_df.xlsx', index=False)
 
 
-# *DATAFRAME PER SELECTED STOCK*
+# *DATAFRAME PER SELECTED BLUE CHIP STOCK*
 
 #appl (apple) stock
 def appl_yearly_earnings(df):

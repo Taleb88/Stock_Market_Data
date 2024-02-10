@@ -661,6 +661,49 @@ yearly_earnings_per_share_pivot_table = \
 yearly_earnings_per_share_pivot_table.\
     to_excel('yearly_earnings_per_share_pivot_table.xlsx')
 
+
+#highest value -> positive yearly earnings per year (2017 will not be highlighted since df is blank)
+#2012
+def highlight_max_positive_yearly_earnings_value(x):
+   max_val = x.max()
+   return ['background-color: red' if val == max_val else '' for val in x]
+
+positive_yearly_earnings_per_share_2012_df = \
+    positive_yearly_earnings_per_share_2012_df.\
+        style.apply(highlight_max_positive_yearly_earnings_value)
+
+positive_yearly_earnings_per_share_2012_df.\
+    to_excel('positive_yearly_earnings_per_share_2012_df.xlsx')
+#2013
+positive_yearly_earnings_per_share_2013_df = \
+    positive_yearly_earnings_per_share_2013_df.\
+        style.apply(highlight_max_positive_yearly_earnings_value)
+
+positive_yearly_earnings_per_share_2013_df.\
+    to_excel('positive_yearly_earnings_per_share_2013_df.xlsx')
+#2014
+positive_yearly_earnings_per_share_2014_df = \
+    positive_yearly_earnings_per_share_2014_df.\
+        style.apply(highlight_max_positive_yearly_earnings_value)
+
+positive_yearly_earnings_per_share_2014_df.\
+    to_excel('positive_yearly_earnings_per_share_2014_df.xlsx')
+#2015
+positive_yearly_earnings_per_share_2015_df = \
+    positive_yearly_earnings_per_share_2015_df.\
+        style.apply(highlight_max_positive_yearly_earnings_value)
+
+positive_yearly_earnings_per_share_2015_df.\
+    to_excel('positive_yearly_earnings_per_share_2015_df.xlsx')
+#2016
+positive_yearly_earnings_per_share_2016_df = \
+    positive_yearly_earnings_per_share_2016_df.\
+        style.apply(highlight_max_positive_yearly_earnings_value)
+
+positive_yearly_earnings_per_share_2016_df.\
+    to_excel('positive_yearly_earnings_per_share_2016_df.xlsx')
+
+
 #lowest value -> negative yearly earnings per year (2017 will not be highlighted since df is blank)
 #2012
 def highlight_min_negative_yearly_earnings_value(x):

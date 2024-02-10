@@ -259,7 +259,7 @@ yearly_earnings_per_share_pivot_table = pd.pivot_table(
 )
 
 yearly_earnings_per_share_pivot_table.to_excel('yearly_earnings_per_share_pivot_table.xlsx')
-'''
+
 #positive yearly earnings per share only (src = pivot table) for 2012-2017 filter
 #2012
 def positive_yearly_earnings_per_share_2012(df):
@@ -431,7 +431,7 @@ positive_yearly_earnings_per_share_2017_df = \
 
 positive_yearly_earnings_per_share_2017_df.\
     to_excel('positive_yearly_earnings_per_share_2017_df.xlsx')
-'''
+
 
 #negative yearly earnings per share only (src = pivot table) for 2012-2017 filter
 #2012

@@ -294,7 +294,180 @@ yearly_earnings_per_share_pivot_table = pd.pivot_table(
 
 yearly_earnings_per_share_pivot_table.to_excel('yearly_earnings_per_share_pivot_table.xlsx')
 
-#negative yearly earnings per share only (pivot table) for 2012-2017 filter
+#positive yearly earnings per share only (src = pivot table) for 2012-2017 filter
+#2012
+def positive_yearly_earnings_per_share_2012(df):
+    try:
+        return df[df['2012'] > 0.0]
+    except Exception as e:
+        print(f'cannot {type(e)}: e \n'
+              f'Unable to filter rows')
+
+positive_yearly_earnings_per_share_2012_df = \
+    positive_yearly_earnings_per_share_2012(yearly_earnings_per_share_pivot_table)
+
+positive_yearly_earnings_per_share_2012_df = \
+    positive_yearly_earnings_per_share_2012_df.drop(
+        ['2003',
+         '2004',
+         '2006',
+         '2007',
+         '2013',
+         '2014',
+         '2015',
+         '2016',
+         '2017'],
+        axis=1
+    )
+
+positive_yearly_earnings_per_share_2012_df.\
+    to_excel('positive_yearly_earnings_per_share_2012_df.xlsx')
+#2013
+def positive_yearly_earnings_per_share_2013(df):
+    try:
+        return df[df['2013'] > 0.0]
+    except Exception as e:
+        print(f'cannot {type(e)}: e \n'
+              f'Unable to filter rows')
+
+positive_yearly_earnings_per_share_2013_df = \
+    positive_yearly_earnings_per_share_2013(yearly_earnings_per_share_pivot_table)
+
+positive_yearly_earnings_per_share_2013_df = \
+    positive_yearly_earnings_per_share_2013_df.drop(
+        ['2003',
+         '2004',
+         '2006',
+         '2007',
+         '2012',
+         '2014',
+         '2015',
+         '2016',
+         '2017'],
+        axis=1
+    )
+
+positive_yearly_earnings_per_share_2013_df.\
+    to_excel('positive_yearly_earnings_per_share_2013_df.xlsx')
+#2014
+def positive_yearly_earnings_per_share_2014(df):
+    try:
+        return df[df['2014'] > 0.0]
+    except Exception as e:
+        print(f'cannot {type(e)}: e \n'
+              f'Unable to filter rows')
+
+positive_yearly_earnings_per_share_2014_df = \
+    positive_yearly_earnings_per_share_2014(
+        yearly_earnings_per_share_pivot_table
+    )
+
+positive_yearly_earnings_per_share_2014_df = \
+    positive_yearly_earnings_per_share_2014_df.drop(
+        ['2003',
+         '2004',
+         '2006',
+         '2007',
+         '2012',
+         '2013',
+         '2015',
+         '2016',
+         '2017'],
+        axis=1
+    )
+
+positive_yearly_earnings_per_share_2014_df.\
+    to_excel('positive_yearly_earnings_per_share_2014_df.xlsx')
+#2015
+def positive_yearly_earnings_per_share_2015(df):
+    try:
+        return df[df['2015'] > 0.0]
+    except Exception as e:
+        print(f'cannot {type(e)}: e \n'
+              f'Unable to filter rows')
+
+positive_yearly_earnings_per_share_2015_df = \
+    positive_yearly_earnings_per_share_2015(
+        yearly_earnings_per_share_pivot_table
+    )
+
+positive_yearly_earnings_per_share_2015_df = \
+    positive_yearly_earnings_per_share_2015_df.drop(
+        ['2003',
+         '2004',
+         '2006',
+         '2007',
+         '2012',
+         '2013',
+         '2014',
+         '2016',
+         '2017'],
+        axis=1
+    )
+
+positive_yearly_earnings_per_share_2015_df.\
+    to_excel('positive_yearly_earnings_per_share_2015_df.xlsx')
+#2016
+def positive_yearly_earnings_per_share_2016(df):
+    try:
+        return df[df['2016'] > 0.0]
+    except Exception as e:
+        print(f'cannot {type(e)}: e \n'
+              f'Unable to filter rows')
+
+positive_yearly_earnings_per_share_2016_df = \
+    positive_yearly_earnings_per_share_2016(
+        yearly_earnings_per_share_pivot_table
+    )
+
+positive_yearly_earnings_per_share_2016_df = \
+    positive_yearly_earnings_per_share_2016_df.drop(
+        ['2003',
+         '2004',
+         '2006',
+         '2007',
+         '2012',
+         '2013',
+         '2014',
+         '2015',
+         '2017'],
+        axis=1
+    )
+
+positive_yearly_earnings_per_share_2016_df.\
+    to_excel('positive_yearly_earnings_per_share_2016_df.xlsx')
+#2017 - TABLE EXPECTED TO BE BLANK
+def positive_yearly_earnings_per_share_2017(df):
+    try:
+        return df[df['2017'] > 0.0]
+    except Exception as e:
+        print(f'cannot {type(e)}: e \n'
+              f'Unable to filter rows')
+
+positive_yearly_earnings_per_share_2017_df = \
+    positive_yearly_earnings_per_share_2017(
+        yearly_earnings_per_share_pivot_table
+    )
+
+positive_yearly_earnings_per_share_2017_df = \
+    positive_yearly_earnings_per_share_2017_df.drop(
+        ['2003',
+         '2004',
+         '2006',
+         '2007',
+         '2012',
+         '2013',
+         '2014',
+         '2015',
+         '2016'],
+        axis=1
+    )
+
+positive_yearly_earnings_per_share_2017_df.\
+    to_excel('positive_yearly_earnings_per_share_2017_df.xlsx')
+
+
+#negative yearly earnings per share only (src = pivot table) for 2012-2017 filter
 #2012
 def negative_yearly_earnings_per_share_2012(df):
     try:
